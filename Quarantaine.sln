@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quarantaine-APP", "Quarantaine-APP\Quarantaine-APP.csproj", "{33E43BB3-BC7A-4588-A876-75C20BF6D700}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quarantaine-APP", "Quarantaine-APP\Quarantaine-APP.csproj", "{33E43BB3-BC7A-4588-A876-75C20BF6D700}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quarantaine-Backend", "Quarantaine-Backend\Quarantaine-Backend.csproj", "{C6F41369-DFB8-4DB6-934D-E8C6EC954966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quarantaine-Backend", "Quarantaine-Backend\Quarantaine-Backend.csproj", "{C6F41369-DFB8-4DB6-934D-E8C6EC954966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quarantaine-Desktop-Backend", "Quarantaine-Desktop-Backend\Quarantaine-Desktop-Backend.csproj", "{872545D8-4F18-4CBC-A021-FCC9567E6BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarantaineDesktop", "QuarantaineDesktop\QuarantaineDesktop.csproj", "{2A13C398-5A54-44D5-8CF5-F52C002DF4C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quarantaine.Desktop.Backend.Test", "Quarantaine.Desktop.Backend.Test\Quarantaine.Desktop.Backend.Test.csproj", "{412B9833-BE2C-40D4-AA06-5D576E9E8A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quarantaine.App.Backend.Test", "Quarantaine.App.Backend.Test\Quarantaine.App.Backend.Test.csproj", "{127D096A-7C6F-40DC-B9D2-0E420752F12D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +31,22 @@ Global
 		{C6F41369-DFB8-4DB6-934D-E8C6EC954966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6F41369-DFB8-4DB6-934D-E8C6EC954966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6F41369-DFB8-4DB6-934D-E8C6EC954966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872545D8-4F18-4CBC-A021-FCC9567E6BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872545D8-4F18-4CBC-A021-FCC9567E6BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872545D8-4F18-4CBC-A021-FCC9567E6BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872545D8-4F18-4CBC-A021-FCC9567E6BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A13C398-5A54-44D5-8CF5-F52C002DF4C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A13C398-5A54-44D5-8CF5-F52C002DF4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A13C398-5A54-44D5-8CF5-F52C002DF4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A13C398-5A54-44D5-8CF5-F52C002DF4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412B9833-BE2C-40D4-AA06-5D576E9E8A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412B9833-BE2C-40D4-AA06-5D576E9E8A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412B9833-BE2C-40D4-AA06-5D576E9E8A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412B9833-BE2C-40D4-AA06-5D576E9E8A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127D096A-7C6F-40DC-B9D2-0E420752F12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127D096A-7C6F-40DC-B9D2-0E420752F12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127D096A-7C6F-40DC-B9D2-0E420752F12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127D096A-7C6F-40DC-B9D2-0E420752F12D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

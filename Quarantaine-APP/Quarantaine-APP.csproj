@@ -24,7 +24,7 @@
 		<ApplicationTitle>Quarantaine-APP</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.quarantaine_app</ApplicationId>
+		<ApplicationId>com.companyname.quarantaineapp</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
