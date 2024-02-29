@@ -8,4 +8,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data-Access\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Managers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
