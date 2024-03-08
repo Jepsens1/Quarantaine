@@ -8,14 +8,15 @@ namespace Quarantaine_Backend.Models
 {
     public struct Position
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
     }
     public struct Area
     {
-        public Position Pos { get; set; }
-        public int W { get; set; }
-        public int H { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double W { get; set; }
+        public double H { get; set; }
 
     }
     public class UserModel
@@ -24,8 +25,9 @@ namespace Quarantaine_Backend.Models
         public string Name { get; private set; }
         public string LastName { get; private set; }
         public bool IsQuarantine { get; set; }
-        public List<Area> IsolationArea { get; set; }
+        public Area IsolationArea { get; set; }
         public Position CurrentPosition { get; set; }
+        public AlarmState LastAlarmState { get; set; }
 
         public UserModel(int id, string name, string lastName, bool isQuarantine)
         {
