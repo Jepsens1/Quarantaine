@@ -16,9 +16,9 @@ namespace Quarantaine_Backend.Data_Access
         {
 
         }
-        public virtual void Remove(UserModel obj)
+        public virtual UserModel Read(UserModel obj)
         {
-
+            return null;
         }
         public virtual void Update(UserModel obj)
         {
@@ -29,6 +29,10 @@ namespace Quarantaine_Backend.Data_Access
 
         }
         public virtual UserModel GetById(int id)
+        {
+            return null;
+        }
+        public virtual UserModel GetByLogin(string name, string password)
         {
             return null;
         }

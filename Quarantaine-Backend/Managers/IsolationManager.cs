@@ -1,4 +1,5 @@
-﻿using Quarantaine_Backend.Models;
+﻿using Quarantaine_Backend.Interfaces;
+using Quarantaine_Backend.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,19 @@ namespace Quarantaine_Backend.Managers
 		public List<AlarmModel> Alarms { get; private set; }
 
 		private List<UserModel> users;
-        public IsolationManager()
+		private IDatabase<UserModel> db;
+        public IsolationManager(IDatabase<UserModel> database)
         {
             users = new List<UserModel>();
 			Alarms = new List<AlarmModel>();
+			db = database;
 			Thread t = new Thread(TriggerUserHasLeftIsolationArea);
 			t.Start();
         }
 
         public void AddUserToIsolation(UserModel user)
 		{
+			db.Create(user);
 			users.Add(user);
 		}
 
@@ -30,6 +34,7 @@ namespace Quarantaine_Backend.Managers
 		{
 			if (users.Contains(user))
 			{
+				db.Delete(user);
 				users.Remove(user);
 			}
 		}
@@ -41,6 +46,8 @@ namespace Quarantaine_Backend.Managers
 				AlarmModel alarm = Alarms[i];
 				if (alarm.User == user)
 				{
+					alarm.User.AlarmIsOn = false;
+					db.Update(alarm.User);
 					Alarms.RemoveAt(i);
 					return;
 				}
@@ -69,6 +76,8 @@ namespace Quarantaine_Backend.Managers
 						{
 							user.LastAlarmState = AlarmState.HIGH;
 						}
+						user.AlarmIsOn = true;
+						db.Update(user);
 						Alarms.Add(new AlarmModel(user));
 					}
 				}

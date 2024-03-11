@@ -21,20 +21,31 @@ namespace Quarantaine_Backend.Models
     }
     public class UserModel
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Name { get; private set; }
         public string LastName { get; private set; }
+        public string Password { get; private set; }
+        public HashSaltModel HashSalt { get; set; }
         public bool IsQuarantine { get; set; }
         public Area IsolationArea { get; set; }
         public Position CurrentPosition { get; set; }
         public AlarmState LastAlarmState { get; set; }
+        public bool AlarmIsOn { get; set; }
 
-        public UserModel(int id, string name, string lastName, bool isQuarantine)
+        public UserModel(string name, string lastName, string password, bool isQuarantine)
         {
-            Id = id;
             Name = name;
             LastName = lastName;
+            Password = password;
             IsQuarantine = isQuarantine;
+        }
+
+        // For creating account
+        public UserModel(string name, string password, HashSaltModel hash)
+        {
+            Name = name;
+            Password = password;
+            HashSalt = hash;
         }
     }
 }
