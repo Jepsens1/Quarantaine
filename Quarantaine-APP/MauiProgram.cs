@@ -1,4 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.LocalNotification;
+using Quarantaine_APP.Interfaces;
+using Quarantaine_APP.Services;
+using Quarantaine_APP.ViewModels;
+using Quarantaine_APP.Views;
 
 namespace Quarantaine_APP
 {
@@ -9,6 +14,7 @@ namespace Quarantaine_APP
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseLocalNotification()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -16,9 +22,17 @@ namespace Quarantaine_APP
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddTransient<INotifyService, NotificationService>();
+            builder.Services.AddSingleton<IParse, RSSParser>();
+            builder.Services.AddSingleton<ILoginService, LoginService>();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<LoginPageViewModel>();
+            builder.Services.AddTransient<TestResultPage>();
+            builder.Services.AddTransient<TestResultViewModel>();
             return builder.Build();
         }
     }
