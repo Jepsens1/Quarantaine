@@ -10,5 +10,9 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Button Command="{Binding ShowLocationCommand}" Text="Location"/>
+        <Button Command="{Binding CalculateDistanceCommand}" Text="Distance"/>
+        <Label Text="{Binding Distance}"/>
     </VerticalStackLayout>
 </ContentPage>

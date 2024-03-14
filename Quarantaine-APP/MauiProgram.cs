@@ -27,12 +27,13 @@ namespace Quarantaine_APP
             builder.Services.AddTransient<INotifyService, NotificationService>();
             builder.Services.AddSingleton<IParse, RSSParser>();
             builder.Services.AddSingleton<ILoginService, LoginService>();
+            builder.Services.AddSingleton<ILocation, GeoLocationService>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainPageViewModel>();
-            builder.Services.AddTransient<LoginPage>();
-            builder.Services.AddTransient<LoginPageViewModel>();
-            builder.Services.AddTransient<TestResultPage>();
-            builder.Services.AddTransient<TestResultViewModel>();
+            builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<LoginPageViewModel>();
+            builder.Services.AddSingleton<TestResultPage>();
+            builder.Services.AddSingleton<TestResultViewModel>();
             return builder.Build();
         }
     }

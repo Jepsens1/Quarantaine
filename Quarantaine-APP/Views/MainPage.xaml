@@ -4,13 +4,12 @@
              x:Class="Quarantaine_APP.MainPage"
              xmlns:viewmodel="clr-namespace:Quarantaine_APP.ViewModels"
              x:DataType="viewmodel:MainPageViewModel">
-
-    <VerticalStackLayout Padding="30,0" Spacing="25">
-        <Grid RowSpacing="6" ColumnSpacing="6">
+    <ScrollView>
+        <Grid Padding="10" ColumnSpacing="4">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
                 <RowDefinition Height="*"/>
-                <RowDefinition Height=".10*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -18,26 +17,24 @@
             </Grid.ColumnDefinitions>
             <CollectionView Grid.Row="0" Grid.ColumnSpan="2" ItemsSource="{Binding NewsFeed}">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="10" ColumnSpacing="12">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="3*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="1" VerticalOptions="Center" Text="{Binding .}" FontAttributes="Bold"/>
+                    <DataTemplate x:DataType="{x:Type x:String}">
+                        <Grid Padding="0,5">
+                        <Label Text="{Binding .}"/>
+                    </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <CollectionView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding SsiFeed}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type x:String}">
+                        <Grid Padding="0,5">
+                            <Label Text="{Binding .}"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <!--<ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding SsiFeed}"/>-->
             <Button Grid.Column="0" Grid.Row="2" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=LoginCommand}" Text="Login"/>
             <Button Grid.Column="1" Grid.Row="2" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=TestResultCommand}" Text="Test results"/>
         </Grid>
-    </VerticalStackLayout>
-
+    </ScrollView>
 </ContentPage>
