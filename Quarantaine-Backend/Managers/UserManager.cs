@@ -17,23 +17,23 @@ namespace Quarantaine_Backend.Managers
             db = database;
         }
 
-        public virtual void Create(UserModel obj)
+        public void CreateUser(UserModel obj)
         {
             db.Create(obj);
         }
-        public virtual UserModel Read(UserModel obj)
+        public UserModel GetUser(UserModel obj)
         {
             return db.Read(obj);
         }
-        public virtual void Update(UserModel obj)
+        public void UpdateUser(UserModel obj)
         {
             db.Update(obj);
         }
-        public virtual void Delete(UserModel obj)
+        public void DeleteUser(UserModel obj)
         {
             db.Delete(obj);
         }
-        public virtual UserModel GetById(int id)
+        public UserModel GetUserById(int id)
         {
             return db.GetById(id);
         }

@@ -32,6 +32,7 @@ namespace Quarantaine_Backend.Managers
             HashSaltModel newHashSalt = EncryptionService.SaltPassword(user.Password);
             user.HashSalt = newHashSalt;
             db.Update(user);
+            UserModel.CurrentUser = user;
             return user;
         }
 

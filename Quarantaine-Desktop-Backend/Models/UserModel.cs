@@ -31,7 +31,6 @@ namespace Quarantaine_Backend.Models
         public Position CurrentPosition { get; set; }
         public AlarmState LastAlarmState { get; set; }
         public bool AlarmIsOn { get; set; }
-        public static UserModel CurrentUser;
 
         public UserModel(string name, string lastName, string password, bool isQuarantine)
         {
@@ -48,6 +47,5 @@ namespace Quarantaine_Backend.Models
             Password = password;
             HashSalt = hash;
         }
-
     }
 }

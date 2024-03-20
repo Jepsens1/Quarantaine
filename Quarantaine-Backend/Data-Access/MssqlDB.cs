@@ -8,23 +8,22 @@ using Quarantaine_Backend.Models;
 
 namespace Quarantaine_Backend.Data_Access
 {
-    public class MssqlDB : IDatabase<UserModel>
+    public class MssqlDB : IDatabase<T>
     {
-        private string connectString;
 
-        public virtual void Create(UserModel obj)
+        public virtual void Create(T obj)
         {
 
         }
-        public virtual UserModel Read(UserModel obj)
+        public virtual UserModel Read(T obj)
         {
             return null;
         }
-        public virtual void Update(UserModel obj)
+        public virtual void Update(T obj)
         {
 
         }
-        public virtual void Delete(UserModel obj)
+        public virtual void Delete(T obj)
         {
 
         }
@@ -32,7 +31,7 @@ namespace Quarantaine_Backend.Data_Access
         {
             return null;
         }
-        public virtual UserModel GetByLogin(string name, string password)
+        public UserModel GetByLogin(string name, string password)
         {
             return null;
         }
