@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quarantaine_APP.MainPage"
+             xmlns:viewmodel="clr-namespace:Quarantaine_APP.ViewModels"
+             x:DataType="viewmodel:MainPageViewModel">
+    <ScrollView>
+        <Grid Padding="10" ColumnSpacing="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <CollectionView Grid.Row="0" Grid.ColumnSpan="2" ItemsSource="{Binding NewsFeed}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type x:String}">
+                        <Grid Padding="0,5">
+                        <Label Text="{Binding .}"/>
+                    </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <CollectionView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding SsiFeed}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type x:String}">
+                        <Grid Padding="0,5">
+                            <Label Text="{Binding .}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Grid.Column="0" Grid.Row="2" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=LoginCommand}" Text="Login"/>
+            <Button Grid.Column="1" Grid.Row="2" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=TestResultCommand}" Text="Test results"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>
